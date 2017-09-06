@@ -1,7 +1,6 @@
 # feathers-bee
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/codeanker/feathers-bee.svg)](https://greenkeeper.io/)
-
 [![Code Climate](https://codeclimate.com/github/codeanker/feathers-bee/badges/gpa.svg)](https://codeclimate.com/github/codeanker/feathers-bee)
 [![Test Coverage](https://codeclimate.com/github/codeanker/feathers-bee/badges/coverage.svg)](https://codeclimate.com/github/codeanker/feathers-bee/coverage)
 [![Dependency Status](https://img.shields.io/david/codeanker/feathers-bee.svg?style=flat-square)](https://david-dm.org/codeanker/feathers-bee)
