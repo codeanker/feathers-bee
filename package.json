@@ -2,7 +2,7 @@
   "name": "feathers-bee",
   "description": "",
   "version": "0.0.2",
-  "homepage": "https://github.com/superbarne/feathers-bee",
+  "homepage": "https://github.com/codeanker/feathers-bee",
   "main": "lib/",
   "keywords": [
     "feathers",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/superbarne/feathers-bee.git"
+    "url": "git://github.com/codeanker/feathers-bee.git"
   },
   "author": {
     "name": "Barne Jürgensen",
@@ -19,7 +19,7 @@
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/superbarne/feathers-bee/issues"
+    "url": "https://github.com/codeanker/feathers-bee/issues"
   },
   "engines": {
     "node": ">= 4.6.0"
@@ -29,11 +29,10 @@
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
     "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
-    "watch": "babel --watch -d lib/ src/",
-    "lint": "semistandard src/**/*.js test/**/*.js --fix",
+    "lint": "semistandard lib/**/*.js test/**/*.js --fix",
     "mocha": "mocha --opts mocha.opts",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts",
-    "test": "npm run compile && npm run lint && npm run coverage",
+    "test": "npm run lint && npm run coverage",
     "start": "node example/app"
   },
   "semistandard": {
@@ -49,6 +48,7 @@
     "bee-queue": "^1.1.0",
     "body-parser": "^1.17.2",
     "debug": "^3.0.1",
+    "eslint-plugin-react": "^7.3.0",
     "feathers": "^2.2.0",
     "feathers-errors": "^2.9.1",
     "feathers-memory": "^1.1.0",
@@ -61,6 +61,10 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^3.5.0",
     "semistandard": "^11.0.0",

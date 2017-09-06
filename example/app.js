@@ -4,7 +4,7 @@ const socketio = require('feathers-socketio');
 const handler = require('feathers-errors/handler');
 const bodyParser = require('body-parser');
 const memory = require('feathers-memory');
-const plugin = require('../src');
+const plugin = require('../lib');
 
 // Create a feathers instance.
 const app = feathers()

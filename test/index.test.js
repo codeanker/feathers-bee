@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import plugin from '../src';
+const { expect } = require('chai');
+const plugin = require('../lib');
 
 describe('feathers-bee', () => {
   it('is CommonJS compatible', () => {
@@ -8,6 +8,5 @@ describe('feathers-bee', () => {
 
   it('basic functionality', () => {
     expect(typeof plugin).to.equal('function', 'It worked');
-    expect(plugin()).to.equal('feathers-bee');
   });
 });
