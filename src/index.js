@@ -5,7 +5,7 @@ class Service {
     this.paginate = options.paginate;
     this.service = options.service;
     this.events = ['ready', 'error', 'succeeded', 'retrying', 'failed', 'stalled'];
-    this.queue = new Queue(options.service);
+    this.queue = new Queue(options.name);
     this.queue.process((job, done) => this._jobProcess(job, done));
   }
 
