@@ -14,9 +14,8 @@
     "url": "git://github.com/superbarne/feathers-bee.git"
   },
   "author": {
-    "name": "Feathers contributors",
-    "email": "hello@feathersjs.com",
-    "url": "https://feathersjs.com"
+    "name": "Barne Jürgensen",
+    "email": "barne.juergensen@codeanker.de"
   },
   "contributors": [],
   "bugs": {
@@ -26,7 +25,6 @@
     "node": ">= 4.6.0"
   },
   "scripts": {
-    "publish": "git push origin --tags && npm run changelog && git push origin",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
