@@ -18,10 +18,13 @@ npm install feathers-bee --save
 ```js
 app.use('/bee', bee({
   service: app.service('serviceToLog'), // add your service
+  name: 'example'
 }));
 ```
 ### Plugin Args
 * **service:** The service to log
+* **name:** Name of the Queue
+* **queue:** Settings of the Queue
 * **paginate:** The default pagenate stuff
 
 ### Bee Queue events
@@ -66,6 +69,8 @@ app.use('/messages', memory({
 // Create bee service
 app.use('/bee', bee({
   service: app.service('messages'), // add your service
+  name: 'example', // name
+  queue: {}, // queue settings
   paginate: {
     default: 2,
     max: 4
