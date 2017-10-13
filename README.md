@@ -2,11 +2,8 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/codeanker/feathers-bee.svg)](https://greenkeeper.io/)
 [![Code Climate](https://codeclimate.com/github/codeanker/feathers-bee/badges/gpa.svg)](https://codeclimate.com/github/codeanker/feathers-bee)
-[![Test Coverage](https://codeclimate.com/github/codeanker/feathers-bee/badges/coverage.svg)](https://codeclimate.com/github/codeanker/feathers-bee/coverage)
 [![Dependency Status](https://img.shields.io/david/codeanker/feathers-bee.svg?style=flat-square)](https://david-dm.org/codeanker/feathers-bee)
 [![Download Status](https://img.shields.io/npm/dm/feathers-bee.svg?style=flat-square)](https://www.npmjs.com/package/feathers-bee)
-
-> 
 
 ## Installation
 
@@ -16,11 +13,33 @@ npm install feathers-bee --save
 
 ## Documentation
 
-Please refer to the [feathers-bee documentation](http://docs.feathersjs.com/) for more details.
+### Setup
+
+```js
+app.use('/bee', bee({
+  service: app.service('serviceToLog'), // add your service
+  name: 'example'
+}));
+```
+### Plugin Args
+* **service:** The service to log
+* **name:** Name of the Queue
+* **queue:** Settings of the Queue
+* **paginate:** The default pagenate stuff
+
+### Bee Queue events
+The [bee-queue events](https://github.com/bee-queue/bee-queue#queue-local-events) are implemented as custom feathers events
+
+## Usage
+* **Create a new job:** call create at the bee service to create a new job
+* **Get a job:** call get with a job id to get a job
+* **Find jobs:** call find at the bee service to find the waiting jobs
+  * change type with params
+
 
 ## Complete Example
 
-Here's an example of a Feathers server that uses `feathers-bee`. 
+Here's an example of a Feathers server that uses `feathers-bee`.
 
 ```js
 const feathers = require('feathers');
@@ -29,7 +48,7 @@ const socketio = require('feathers-socketio');
 const handler = require('feathers-errors/handler');
 const bodyParser = require('body-parser');
 const memory = require('feathers-memory');
-const plugin = require('feathers-bee');
+const bee = require('feathers-bee');
 
 // Create a feathers instance.
 const app = feathers()
@@ -38,6 +57,7 @@ const app = feathers()
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({extended: true}));
 
+// Create any service you like.
 app.use('/messages', memory({
   paginate: {
     default: 2,
@@ -45,8 +65,12 @@ app.use('/messages', memory({
   },
   id:'_id'
 }));
-app.use('/task', plugin({
-  service: app.service('messages'),
+
+// Create bee service
+app.use('/bee', bee({
+  service: app.service('messages'), // add your service
+  name: 'example', // name
+  queue: {}, // queue settings
   paginate: {
     default: 2,
     max: 4

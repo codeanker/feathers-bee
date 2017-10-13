@@ -22,6 +22,8 @@ app.use('/messages', memory({
 }));
 app.use('/task', plugin({
   service: app.service('messages'),
+  name: 'example', // name
+  queue: {}, // queue settings
   paginate: {
     default: 2,
     max: 4
