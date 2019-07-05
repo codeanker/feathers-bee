@@ -50,7 +50,7 @@
     "eslint-plugin-react": "^7.11.1",
     "feathers": "^2.2.4",
     "feathers-errors": "^2.9.1",
-    "feathers-memory": "^3.0.0",
+    "feathers-memory": "^4.0.0",
     "feathers-rest": "^1.8.1",
     "feathers-socketio": "^2.0.1"
   },
